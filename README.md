@@ -1,6 +1,7 @@
 # Notes
 
 - add your firebase config in 'firebase.js'
+
 - add your GOOGLE_CLIENT_ID & GOOGLE_CLIENT_SECRET in '.env.local'
 
 
