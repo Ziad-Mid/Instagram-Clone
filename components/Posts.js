@@ -3,8 +3,6 @@ import { onSnapshot, collection, query, orderBy } from "@firebase/firestore";
 import Post from "./Post";
 import { db } from "../firebase";
 
-
-
 function Posts() {
   const [posts, setPosts] = useState([]);
 
@@ -12,6 +10,7 @@ function Posts() {
     const unsubscribe = onSnapshot(
       query(collection(db, "posts"), orderBy("timestamp", "desc")),
       (snapshot) => {
+        // console.log(snapshot.docs)
         setPosts(snapshot.docs);
       }
     );
@@ -19,7 +18,6 @@ function Posts() {
     return unsubscribe;
   }, [db]);
 
-  
   return (
     <div>
       {posts.map((post) => (
